@@ -1,0 +1,23 @@
+
+<% layout('layout/boilerplates') %>
+<div class="container mt-5">
+<div class="row">
+
+    <h1 class="text-center change">Login</h1>
+    <div class="col-6 offset-3">
+
+        <form action="/login" method="post" class="ValidatingData" novalidate>
+            <label for="username" class="form-label"><h5 class="change"> User Name</h5></label>
+            <input type="text" class="form-control" placeholder="username" name="username" id="username" required>
+            <label for="password" class="form-label"><h5 class="change">Password</h5></label>
+            <input type="password" placeholder="password" class="form-control" name="password" id="password" required>
+            
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary mt-3" type="submit">Login</button>
+  
+        </div>
+        </form>
+        
+    </div>
+</div>
+</div>

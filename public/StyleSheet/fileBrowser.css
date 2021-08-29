@@ -1,0 +1,16 @@
+
+
+.browser-label{
+    border:0.1em solid white;
+    padding: 0.8em 2em;
+    background-color: gray;
+    border-radius:3px;
+}
+
+.browser-text{
+    border:0.1em solid white;
+    padding: 0.8em 2em;
+    
+    border-radius:3px;
+
+}

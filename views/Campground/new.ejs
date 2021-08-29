@@ -1,0 +1,42 @@
+
+<% layout('layout/boilerplates') %>
+<link rel="stylesheet" href="/StyleSheet/fileBrowser.css">
+<div class="container mt-5">
+<div class="row">
+
+    <h1 class="text-center change">Add new camp</h1>
+    <div class="col-6 offset-3">
+
+        <form action="/camps" method="post" class="ValidatingData" novalidate enctype="multipart/form-data">
+            <label for="name" class="form-label"><h5 class="change">Camp name</h5></label>
+            <input type="text" class="form-control" placeholder="name" name="campground[name]" id="name" required>
+            <label for="location" class="form-label"><h5  class="change">Location</h5></label>
+            <input type="text" class="form-control" placeholder="location" name="campground[location]" id="location" required>
+        <label for="price" class="form-label"><h5  class="change">Price</h5></label>
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" id="price" name="campground[price]" required>
+            <span class="input-group-text">.00</span>
+        </div>
+        <div class="mb-3">
+            
+            <label for="description" class="form-label"><h5 class="change">Description</h5></label>
+            <textarea name="campground[description]" id="description" class="form-control" cols="10" rows="2" required></textarea>
+        </div>
+        <div class="mb-4">
+            <input type="file" class="browser-input" id="Image" name="Image" multiple hidden="hidden">
+            <label class="browser-label" for="Image">Choose file</label>
+            <span class="browser-text change">Choose Images</span>
+          </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary mt-1" type="submit">Submit</button>
+            
+        </div>
+        
+    </form>
+    
+</div>
+</div>
+</div>
+<script src="/JavaScript/browser.js"></script>
+

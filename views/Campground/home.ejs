@@ -1,0 +1,47 @@
+
+<% layout('layout/boilerplates') %> 
+<link rel="stylesheet" href="/StyleSheet/mapStyling.css">
+<div id="map" class="style-map"></div>
+<div class="container mt-5">
+
+    
+    <h1 class="text-center">All Camps</h1>
+    
+    
+    <ul>
+        <% for(let clist of campList){ %>
+            <div class="card mb-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <% if(clist.Image.length) {%>
+                            <img src="<%= clist.Image[0].url %> " alt="" class="img-fluid">
+                            <% } else { %>
+                                <img src="https://res.cloudinary.com/ddsytdpy4/image/upload/v1630052350/yelpCamp/gyuqpgv3tv3odsjnxwjt.jpg" alt="" class="img-fluid">
+                                <% } %>   
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            
+                            <h5 class="card-title"><%= clist.name %> </h5>
+                            <p class="card-text"><%= clist.description %> </p>
+                            <p class="card-text">
+                                <small class="text-muted"><%= clist.location %> </small>
+                            </p>
+                            <a href="/camps/<%= clist._id %> " class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <% } %>  
+        </ul>
+    </div>
+
+    <script> 
+        const mbxToken='<%-process.env.MAPBOX_TOKEN %>';
+        const Campgrd= { features: <%- JSON.stringify(campList) %> }
+        </script>
+
+        <script src="/JavaScript/clusterMap.js"></script>
+        
+        

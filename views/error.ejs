@@ -1,0 +1,17 @@
+
+  
+  <% layout('layout/boilerplates') %>
+  
+<div class="container">
+
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading"><%= err.message %> </h4>
+    <% if(process.env.NODE_ENV !=="production") {%> 
+      <p><%= err.stack%> </p>
+      <% } %> 
+      <hr>
+      <p class="mb-0"> Fill the fields correctly!</p>
+      
+    </div>
+    </div>
+ 

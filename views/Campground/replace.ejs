@@ -1,0 +1,59 @@
+<% layout('layout/boilerplates') %>
+<link rel="stylesheet" href="/StyleSheet/fileBrowser.css">
+
+<div class="container mb-5">
+
+    <h1 class="text-center">Edit camp</h1>
+    
+    <div class="row">
+
+        
+        <div class="col-6 offset-3">
+    
+            <form action="/camps/<%= replaceCamp._id %>?_method=PUT" method="post" class="ValidatingData" novalidate enctype="multipart/form-data">
+                <label for="name" class="form-label"><h5  class="change">Camp name</h5></label>
+                <input type="text" class="form-control" placeholder="name" name="campground[name]" id="name" value="<%= replaceCamp.name %> " required>
+                <label for="location" class="form-label"><h5  class="change">Location</h5></label>
+                <input type="text" class="form-control" placeholder="location" name="campground[location]" id="location" value="<%= replaceCamp.location %> " required>
+              <div>
+
+                  
+              </div>
+                <label for="price" class="form-label"><h5  class="change">Price</h5></label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" id="price" name="campground[price]" value="<%= replaceCamp.price %> " required>
+                    <span class="input-group-text">.00</span>
+                  </div>
+                  <div class="mb-3">
+    
+                      <label for="description" class="form-label"><h5  class="change">Description</h5></label>
+                      <textarea name="campground[description]" id="description" class="form-control" cols="10" rows="2" required><%= replaceCamp.description %> </textarea>
+                    </div>
+                    <div class="mb-4">
+                        <input type="file" class="browser-input" id="Image" name="Image" multiple hidden="hidden">
+                        <label class="browser-label" for="Image">Choose file</label>
+                        <span class="browser-text change">Choose Images</span>
+                      </div>
+                      <div class="mb-3">
+                          <% replaceCamp.Image.forEach((Img,i)=>{ %>
+                            <img src="<%= Img.thumbnail %> " class="img-thumbnail" alt="" >
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="<%= Img.fileName %>" id="img<%= i %> " name="deleteImage[]"  >
+                                <label class="form-check-label change" for="img<%= i %> ">
+                                  Delete?
+                                </label>
+                              </div>
+                            <% }) %>  
+                      </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-danger mt-1" type="submit">Upgrade</button>
+                    <a href="/camps/<%= replaceCamp._id %>" class="btn btn-info"> Cancel</a>
+      
+            </div>
+            </form>
+            
+        </div>
+    </div>
+  </div>
+    <script src="/JavaScript/browser.js"></script>
