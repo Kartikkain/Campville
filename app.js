@@ -161,6 +161,7 @@ app.use((err,req,res,next)=>{
     if(!err.message)err.message="something went wrong";
     res.status(statusCode).render('error.ejs',{err});
 })
-app.listen(8080,()=>{
+const port=process.env.PORT || 8080
+app.listen(port,()=>{
     console.log("Server is started");
 })
