@@ -76,18 +76,19 @@ const scriptSrcUrls = [
     "https://cdn.jsdelivr.net",
 ];
 const styleSrcUrls = [
-    "https://kit-free.fontawesome.com/",
-    "https://stackpath.bootstrapcdn.com/",
-    "https://api.mapbox.com/",
-    "https://api.tiles.mapbox.com/",
-    "https://fonts.googleapis.com/",
-    "https://use.fontawesome.com/",
+    "kit-free.fontawesome.com",
+    "stackpath.bootstrapcdn.com",
+    "api.mapbox.com",
+    "api.tiles.mapbox.com",
+    "fonts.googleapis.com",
+    "use.fontawesome.com",
+    "cdn.jsdelivr.net"
 ];
 const connectSrcUrls = [
-    "https://api.mapbox.com/",
-    "https://a.tiles.mapbox.com/",
-    "https://b.tiles.mapbox.com/",
-    "https://events.mapbox.com/",
+    "api.mapbox.com",
+    "a.tiles.mapbox.com",
+    "b.tiles.mapbox.com",
+    "events.mapbox.com",
 ];
 const fontSrcUrls = [];
 app.use(
